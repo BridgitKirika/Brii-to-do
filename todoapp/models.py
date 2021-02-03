@@ -6,14 +6,14 @@ from django.dispatch import receiver
 from django.urls import reverse
 from django.db.models.signals import post_save
 
-from PIL import Image
 
 from django.urls import reverse
 
 
 # Create your models here.
 
-class Task(models.Model):
+class Tasks(models.Model):    
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="task", blank=True,null=True)
     title = models.CharField(max_length=200)
     complete = models.BooleanField(default=False)
     date = models.DateTimeField(auto_now_add=True)
@@ -25,7 +25,16 @@ class Task(models.Model):
     def get_absolute_url(self):
         return reverse('index')
 
+    def delete_task(self):
+        self.delete()
+
     
+    @classmethod
+    def all_tasks(cls):
+        return cls.objects.all()
+
+    def save_task(self):
+        self.save()
     
     
 

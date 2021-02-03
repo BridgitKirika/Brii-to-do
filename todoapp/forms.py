@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
 from django.contrib.auth.models import User
-from . models import Task,Profile
+from . models import Tasks,Profile
 
 class CreateUserForm(UserCreationForm):
     class Meta:
@@ -24,6 +24,8 @@ class ProfileUpdateForm(forms.ModelForm):
 
 
 class TasksForm(forms.ModelForm):
+    image = forms.ImageField(required=True)
+
     class Meta:
-        model = Task
+        model = Tasks
         fields = '__all__'

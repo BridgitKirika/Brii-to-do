@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from .forms import *
-from .models import Task,Profile
+from .models import Tasks,Profile
 from django.views.generic import CreateView, ListView
 from django.contrib.auth import authenticate,login,logout
 from django.views.decorators.csrf import csrf_exempt
@@ -14,7 +14,7 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here
 @login_required(login_url='login')
 def index(request):
-    tasks = Task.objects.all()
+    tasks = Tasks.objects.all()
 
     form = TasksForm()
 
@@ -31,7 +31,7 @@ def index(request):
 
 
 class TaskCreateView(CreateView):
-    model = Task
+    model = Tasks
     template_name = 'update_task.html'   
     fields= ['title','complete']    
 

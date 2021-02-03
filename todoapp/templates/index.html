@@ -4,20 +4,25 @@
 {% block content %}
 
 {{block.super}}
-<body style= "background-color:  #f9f9f9;">
+<body>
 
-    <div class="templates d-flex flex-row" >
-        {% for  task in tasks %}
+                <div class="bg"> 
+                <div class="flex-container">
+            
+    <div class="templates d-flex flex-row"   style="background-image: url('  https://images.unsplash.com/photo-1593642532400-2682810df593?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80'); height: 600px;">
+        {% for  tasks in tasks %}
+
         <div class="col-md-4 mt-4">
             <div class="card profile-card-5">
-                
-                    <div class="card-body pt-0">
-                    <h5 class="card-title">{{task.title}}</h5>
-                    <p class="card-text">{{task.description}}</p>
+                       <div class="card-body pt-0">
+                    <h5 class="card-title">{{tasks.title}}</h5>
+                    <p class="card-text">{{tasks.description}}</p>
+                    <hr>
+                    <small class="card-text" style="color: blue; font-weight: 500;"  > Complete :{{tasks.complete}}</small>
                     <hr>
                 
-                By {{task.name|title}} <span style="float:right">{{task.date|date}}</span>
-                  <hr>
+                <span>{{tasks.date|date}}</span>
+                  </p>                
                 <a class="btn btn-secondary btn-sm mt-1 mb-sm" href="">Update</a>
                 <a class="btn btn-danger btn-sm mt-1 mb-1" href="">Delete</a>
                 </div>
@@ -27,6 +32,8 @@
     </div>
 </div>
 </div>
+</div>
+
 </body>
 
 {% endblock %}
