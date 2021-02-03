@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
 from django.contrib.auth.models import User
-from . models import *
+from . models import Task,Profile
 
 class CreateUserForm(UserCreationForm):
     class Meta:
