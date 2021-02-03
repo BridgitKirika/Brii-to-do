@@ -1,1 +1,30 @@
-<h1>Welcome to my todo app</h1>
+{%extends 'base.html'%}
+{% load crispy_forms_tags %}
+{% load bootstrap3%}
+{% block content %}
+
+{{block.super}}
+<body >
+    <div class="templates d-flex flex-row">
+        {% for  task in tasks %}
+
+        <div class="col-md-4 mt-4">
+            <div class="card profile-card-5">
+                       <div class="card-body pt-0">
+                    <h5 class="card-title">{{task.title}}</h5>
+                    <p class="card-text">{{task.description}}</p>
+                    <hr>
+                
+                By {{task.name|title}} <span style="float:right">{{task.date|date}}</span>
+                  <hr>
+                <a class="btn btn-secondary btn-sm mt-1 mb-sm" href="">Update</a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+
+{% endblock %}
