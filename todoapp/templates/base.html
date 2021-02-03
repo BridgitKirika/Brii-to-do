@@ -1,5 +1,5 @@
 {% load bootstrap3%}
-
+{% load static %}
 
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,8 @@
 </head>
 <body>
     {% include "navbar.html" %}
-
+    
+<hr>
     {% block content %}  {%endblock%}
 
     {% block scripts %}
