@@ -7,7 +7,8 @@ from .views import TaskCreateView,TaskUpdateView,TaskDeleteView
 
 
 urlpatterns=[
-    path('',views.index,name = 'index'),
+    path('', views.welcome, name='welcome'),
+    path('index/',views.index,name = 'index'),
     path('profile/', views.profile, name='profile'),
     path('register/', views.registerPage, name="register"),
     path('login/', views.loginPage, name="login"),

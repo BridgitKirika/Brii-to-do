@@ -1,4 +1,13 @@
-<nav style="background-color: black;"class="navbar" role="navigation" aria-label="main navigation" id=#nbar>
+
+<style>
+  a:hover{
+    background-color: black;
+    
+}
+</style>
+
+
+<nav style="background-color: rgb(2, 2, 31);"class="navbar" role="navigation" aria-label="main navigation" id=#nbar>
   <div class="navbar-brand">
     <a class="navbar-item" href="">
     </a>
@@ -11,8 +20,15 @@
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
+
+<div class="navbar-start">
+      <a class="navbar-item" style="color: white; font-size: larger; background-color:rgb(2, 2, 29);" href="{% url 'welcome' %}">
+        <i class="material-icons"></i>
+        Brii-To-Do
+      </a>
+
     <div class="navbar-start">
-      <a class="navbar-item" style="color: white; background-color: black;" href="{% url 'index' %}">
+      <a class="navbar-item" style="color: white;  background-color:rgb(2, 2, 29);" href="{% url 'index' %}">
         <i class="material-icons">home</i>
         Home
       </a>
@@ -20,15 +36,15 @@
       </div>
       
       <div class="navbar-start">
-                  <a class="navbar-item" style="color: white; background-color: black;" href="{% url 'task-create' %}">
+                  <a class="navbar-item" style="color: white;  background-color:rgb(2, 2, 29);" href="{% url 'task-create' %}">
                     <i style="color: black;" class="material-icons"></i>
                       Create task
                   </a>
               </div>
                 
     <div class="navbar-start">
-                  <a class="navbar-item" style="color: white; background-color: black;"  href="{% url 'profile' %}">
-                    <i  style="color: black;"class="material-icons">face</i>
+                  <a class="navbar-item" style="color: white;  background-color:rgb(2, 2, 29);"  href="{% url 'profile' %}">
+                    <i  style="color: white;"class="material-icons">face</i>
                       Profile
                   </a>
               </div>
@@ -41,7 +57,7 @@
         <div class="buttons">
            
           <div class="navbar-start">
-              <a class="navbar-item"  style="color: white; background-color: black;" href="{% url 'logout' %}">logout</a>
+              <a class="navbar-item"  style="color: white;  background-color:rgb(2, 2, 29);" href="{% url 'logout' %}">logout</a>
             </div>
       </div>
     </div>

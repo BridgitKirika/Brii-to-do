@@ -6,7 +6,7 @@
 {{block.super}}
 <body>
 
-    <h1 style="color: blue; font-size: 30px; font-weight: bold; text-align: center; font-family: 'Gabriela', serif;">Tasks Created!!</h1>
+    <h1 style="color: purple; font-size: 30px; font-weight: bold; text-align: center; font-family: 'Gabriela', serif;">Tasks Created!!</h1>
     <div class="bg"> 
     <div class="flex-container">
             
@@ -19,7 +19,7 @@
                     <h5 class="card-title" style="color: black; font-weight: 600;">{{tasks.title}}</h5>
                     <p class="card-text">{{tasks.description}}</p>
                     <hr>
-                    <small class="card-text" style="color: blue; font-weight: 500;"> Complete :{{tasks.complete}}</small>
+                    <small class="card-text" style="color: green; font-weight: 500;"> Complete :{{tasks.complete}}</small>
                     <hr>
                 
                 <span style="color: black;">By {{tasks.user.username|title}}</span> <span style="float:right; color: black;">{{tasks.date|date}}</span>
@@ -49,5 +49,3 @@
             </footer>
 
 {% endblock %}
-
-    

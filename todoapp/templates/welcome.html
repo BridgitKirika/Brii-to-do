@@ -1,0 +1,58 @@
+{% load crispy_forms_tags %}
+{% load bootstrap3%}
+{% block content %}
+
+
+<style>
+    h3{
+        color: blue;
+        font-size: 40px;
+        font-weight: bold;
+        font-family: 'Yesteryear', cursive, serif;
+        text-align: center;
+    }
+
+    h1{
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center; 
+    }
+
+    p{
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center; 
+        font-family: 'Architects Daughter', cursive;
+
+    }
+</style>
+
+<body>
+
+    <div class="landingpage" style="background-image: url('https://images.unsplash.com/photo-1509475826633-fed577a2c71b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80'); height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;">
+    <div class="navbar-start">
+      <a class="navbar-item" style="color: white; font-size: larger; " href="{% url 'index' %}">
+        Home
+      </a>
+
+    <h3>Welcome to Brii-to-do!!</h3>
+
+    
+        <br>
+
+        <h1>Create your Tasks here!!!</h1>
+        <br>
+
+        <p>Brii-To-Do is a To-do App where you can post you tasks which you  are planning to do.</p>
+
+    </div>
+
+
+</body>
+{% endblock %}
+
+    

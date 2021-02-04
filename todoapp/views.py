@@ -28,7 +28,10 @@ def index(request):
     context = {'tasks':tasks, 'form': form}
     return render(request, 'index.html', context)
 	
-
+def welcome(request):
+    context = {}
+    return render(request, 'welcome.html', context)
+	
 
 class TaskCreateView(LoginRequiredMixin,CreateView):
     model = Tasks
