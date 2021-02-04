@@ -5,9 +5,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from .forms import *
 from .models import Tasks,Profile
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView,UpdateView,DeleteView
 from django.contrib.auth import authenticate,login,logout
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 
 
 
@@ -29,13 +30,42 @@ def index(request):
 	
 
 
-
-class TaskCreateView(CreateView):
+class TaskCreateView(LoginRequiredMixin,CreateView):
     model = Tasks
     template_name = 'update_task.html'   
-    fields= ['title','complete']    
+    fields= ['title','complete'] 
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+   
+class TaskUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
+    model = Tasks
+    template_name = 'update_task.html'   
+    fields= ['title', 'complete']  
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        tasks = self.get_object()
+        if self.request.user == tasks.user:
+            return True
+        return False
+
+class TaskDeleteView(LoginRequiredMixin,UserPassesTestMixin,DeleteView):
+    model = Tasks
+    template_name = 'delete.html'
+    success_url = ('/')
+
+    def test_func(self):
+        tasks = self.get_object()
+        if self.request.user == tasks.user:
+            return True
+        return False
+
+     
 @csrf_exempt
 def registerPage(request):
     if request.user.is_authenticated:
@@ -92,6 +122,7 @@ def profile(request):
     }
 
     return render(request, 'profile.html', context)
+
 
 
 

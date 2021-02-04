@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load bootstrap3%}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group" style="text-align: center;">
+                <legend class="border-bottom mb-4" style="color: black; font-weight: 700; font-size: 35px; font-family: 'Gabriela', serif;">Delete Flashcard</legend>
+                <h2 style="color: black; font-weight: 500; font-size: medium;">Are you sure you want to delete the flashcard "{{ tasks.title }}"</h2>
+            </fieldset>
+            <div class="form-group" style="text-align: center;">
+                <button class="btn btn-outline-danger" type="submit" style="background-color: red; color: white;">Yes, Delete</button>
+                <button class="btn btn-outline-secondary" href="{% url 'index' %}" style="background-color: blue; color: white;">cancel</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

@@ -1,18 +1,20 @@
 from django.conf.urls import url
 from . import views
-
+from django.urls import path, re_path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import TaskCreateView
+from .views import TaskCreateView,TaskUpdateView,TaskDeleteView
 
 
 urlpatterns=[
-    url('^$',views.index,name = 'index'),
-    url(r'^profile/', views.profile, name='profile'),
-    url(r'^register/', views.registerPage, name="register"),
-    url(r'^login/', views.loginPage, name="login"),
-    url(r'^logout/', views.logoutUser, name="logout"),
-    url(r'^task/new/', TaskCreateView.as_view(), name='task-create'),    
+    path('',views.index,name = 'index'),
+    path('profile/', views.profile, name='profile'),
+    path('register/', views.registerPage, name="register"),
+    path('login/', views.loginPage, name="login"),
+    path('logout/', views.logoutUser, name="logout"),
+    path('task/new/', TaskCreateView.as_view(), name='task-create'),
+    path('task/<int:pk>/update/',TaskUpdateView.as_view(), name="task-update"),
+    path('task/<int:pk>/delete/',TaskDeleteView.as_view(), name="task-delete"),
 
 ]
 

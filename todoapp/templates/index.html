@@ -6,25 +6,27 @@
 {{block.super}}
 <body>
 
-                <div class="bg"> 
-                <div class="flex-container">
+    <h1 style="color: blue; font-size: 30px; font-weight: bold; text-align: center; font-family: 'Gabriela', serif;">Tasks Created!!</h1>
+    <div class="bg"> 
+    <div class="flex-container">
             
-    <div class="templates d-flex flex-row"   style="background-image: url('  https://images.unsplash.com/photo-1593642532400-2682810df593?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80'); height: 600px;">
+    <div class="templates d-flex flex-row" style="background-image: url('https://images.unsplash.com/photo-1594636797501-ef436e157819?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80'); height: 600px;">
         {% for  tasks in tasks %}
 
         <div class="col-md-4 mt-4">
             <div class="card profile-card-5">
-                       <div class="card-body pt-0">
-                    <h5 class="card-title">{{tasks.title}}</h5>
+                <div class="card-body pt-0">
+                    <h5 class="card-title" style="color: black; font-weight: 600;">{{tasks.title}}</h5>
                     <p class="card-text">{{tasks.description}}</p>
                     <hr>
-                    <small class="card-text" style="color: blue; font-weight: 500;"  > Complete :{{tasks.complete}}</small>
+                    <small class="card-text" style="color: blue; font-weight: 500;"> Complete :{{tasks.complete}}</small>
                     <hr>
                 
-                <span>{{tasks.date|date}}</span>
-                  </p>                
-                <a class="btn btn-secondary btn-sm mt-1 mb-sm" href="">Update</a>
-                <a class="btn btn-danger btn-sm mt-1 mb-1" href="">Delete</a>
+                <span style="color: black;">By {{tasks.user.username|title}}</span> <span style="float:right; color: black;">{{tasks.date|date}}</span>
+                  </p>
+                  
+                <a class="btn btn-secondary btn-sm mt-1 mb-sm" style="background-color: blue; color: white;" href="{% url 'task-update' tasks.id%}">Update</a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1" style="float: right; background-color: red; color:white;" href="{% url 'task-delete' tasks.id%}">Delete</a>
                 </div>
             </div>
         </div>
@@ -36,4 +38,16 @@
 
 </body>
 
+<footer class="footer" style="background-color: black; color: white;">
+            <div class="content has-text-centered">
+                <p>
+                <strong style="color: white;">Brii-To-Do</strong> by <a href="">Bridgit Kirika</a>.licensed by
+                <a href="">MIT</a>. The website content
+                is licensed <a href="">CC BY NC SA 4.0</a>. <small>Copyright(c) 2021</small>
+                </p>
+            </div>
+            </footer>
+
 {% endblock %}
+
+    

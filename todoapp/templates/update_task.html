@@ -3,7 +3,7 @@
 {% block content %}
 {{block.super}}
 
-<div class="columns is-mobile has-text-centered">
+<div class="columns is-mobile has-text-centered" style="background-color: gray;">
   <div class="column is-half is-offset-one-quarter">
 
     <div class="card">
@@ -11,7 +11,7 @@
 
      <form method="post" action="" enctype="multipart/form-data" role="form">
     {%csrf_token %}
-    <h3 class="title is-1" style="font-size: small; color: black;">New Task</h3>
+    <h3 class="title is-1" style="font-size: small; color: blue; font-weight: bold; font-size: 20px;">New Task</h3>
 
           <div class="field">
               <p class="control has-icons-left">
