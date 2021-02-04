@@ -16,26 +16,26 @@
 
 # Set up or Installation
 
-#### 1. git clone
+### 1. git clone
 #### https://github.com/Bridgit-wairimu/Brii-to-do
 
-#### 2. cd brii-to-do
+### 2. cd brii-to-do
 
-#### 3. install and activate the environment
+### 3. install and activate the environment
 #### ie python -m venv virtual 
 
-#### 4 .Install django to your project
+### 4 .Install django to your project
 #### ie pip install django
 
-#### 5 .Create your app and project file in your environment
+### 5 .Create your app and project file in your environment
 
 #### ie (virtual)$ django-admin startproject heyapp( the app)
 
 #### ie (virtual)$ django-admin startapp heyproject( the project)
 
-#### 6. Run the application
+### 6. Run the application
 
-#### 7. python manage.py runserver
+### 7. python manage.py runserver
 
 # Technologies Used
 
