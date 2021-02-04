@@ -16,28 +16,26 @@
 
 # Set up or Installation
 
-## git clone
+#### 1. git clone
 #### https://github.com/Bridgit-wairimu/Brii-to-do
 
-## cd brii-to-do
+#### 2. cd brii-to-do
 
-## install and activate the environment
+#### 3. install and activate the environment
 #### ie python -m venv virtual 
 
-## Install django to your project
+#### 4 .Install django to your project
 #### ie pip install django
 
-## Create your app and project file in your environment
+#### 5 .Create your app and project file in your environment
 
 #### ie (virtual)$ django-admin startproject heyapp( the app)
 
 #### ie (virtual)$ django-admin startapp heyproject( the project)
 
+#### 6. Run the application
 
-## Update your file
-
-## Run the application
-#### python manage.py runserver
+#### 7. python manage.py runserver
 
 # Technologies Used
 
@@ -49,6 +47,7 @@
 # Known Bugs
 
 #### There are no Bugs.The project is working perfectly
+
 # Live Link
 
 #### https://briitodo.herokuapp.com/
